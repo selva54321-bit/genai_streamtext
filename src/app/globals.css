@@ -1,0 +1,108 @@
+:root {
+  --background: #f3f4f8;
+  --foreground: #2e2e2e;
+  --primary-color: #4a90e2; /* Light blue */
+  --secondary-color: #e9eef3; /* Light gray-blue for accents */
+  --border-color: #d0d6dd; /* Soft border color */
+  --button-hover: #3a7dc4; /* Darker shade of primary for button hover */
+  --input-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1e1e1e;
+    --foreground: #f3f4f8;
+    --primary-color: #4a90e2;
+    --secondary-color: #303030;
+    --border-color: #4a4a4a;
+    --button-hover: #3a7dc4;
+    --input-bg: #333333;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-container {
+  background-color: var(--input-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.messages {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.message strong {
+  color: var(--primary-color);
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+form input {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-right: 10px;
+  color: var(--foreground);
+}
+
+form input::placeholder {
+  color: #a0a0a0;
+}
+
+form button {
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Scrollbar styling */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+}
